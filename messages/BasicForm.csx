@@ -34,26 +34,26 @@ public class BasicForm
 
     public static IForm<BasicForm> BuildForm()
     {
-        // return new FormBuilder<BasicForm>()
-        //             .AddRemainingFields()
-        //             .Build();
-
         return new FormBuilder<BasicForm>()
-                    .Field(nameof(Genre))
-                    .Field(nameof(Vocalist))
-                    .Field(nameof(Feeling))
-                    .Field(new FieldReflector<BasicForm>(nameof(Choice1))
-                        .SetDefine(async (state, field) =>
-                        {
-                            field
-                            .AddDescription(Choices1.ElvisPresley, Convert.ToString(Choices1.ElvisPresley), "https://newmusicbotb76a.blob.core.windows.net/media/Elvis-Presley-009-150x150.jpg")
-                            .AddTerms(Choices1.ElvisPresley, Convert.ToString(Choices1.ElvisPresley))
+                    .AddRemainingFields()
+                    .Build();
 
-                            .AddDescription(Choices1.KatyPerry, Convert.ToString(Choices1.KatyPerry), "https://newmusicbotb76a.blob.core.windows.net/media/katy_perry_th_009.jpg")
-                            .AddTerms(Choices1.KatyPerry, Convert.ToString(Choices1.KatyPerry));
+        //return new FormBuilder<BasicForm>()
+        //            .Field(nameof(Genre))
+        //            .Field(nameof(Vocalist))
+        //            .Field(nameof(Feeling))
+        //            .Field(new FieldReflector<BasicForm>(nameof(Choice1))
+        //                .SetDefine(async (state, field) =>
+        //                {
+        //                    field
+        //                    .AddDescription(Choices1.ElvisPresley, Convert.ToString(Choices1.ElvisPresley), "https://newmusicbotb76a.blob.core.windows.net/media/Elvis-Presley-009-150x150.jpg")
+        //                    .AddTerms(Choices1.ElvisPresley, Convert.ToString(Choices1.ElvisPresley))
 
-                            return true;
-                        }));
+        //                    .AddDescription(Choices1.KatyPerry, Convert.ToString(Choices1.KatyPerry), "https://newmusicbotb76a.blob.core.windows.net/media/katy_perry_th_009.jpg")
+        //                    .AddTerms(Choices1.KatyPerry, Convert.ToString(Choices1.KatyPerry));
+
+        //                    return true;
+        //                }));
     }
 
     public static IFormDialog<BasicForm> BuildFormDialog(FormOptions options = FormOptions.PromptInStart)
